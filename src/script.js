@@ -2,7 +2,19 @@
 const name_item = document.querySelector("#name_item");
 const quantity_item = document.querySelector("#quantity_item");
 const add_btn = document.querySelector("#add_item");
-const itemsContainer = document.querySelector("#container")
+const itemsContainer = document.querySelector("#container");
+const allInputs = document.querySelectorAll('input');
+
+document.addEventListener('DOMContentLoaded', () => {
+    add_btn.disabled = true;
+});
+
+// Exemplo: iterando sobre todos os inputs e desabilitando-os
+allInputs.forEach(input => {
+    input.addEventListener("change", () => {
+        fieldsValidation();
+    })
+});
 
 add_btn.addEventListener('click', () => {
     event.preventDefault();
@@ -39,3 +51,14 @@ add_btn.addEventListener('click', () => {
 
             //}
         })
+
+ function fieldsValidation(){
+     if(name_item.value!="" && quantity_item.value!=""){
+        add_btn.disabled = false;
+     } else {
+            const warning = document.createElement("p");
+            warning.textContent = "name item and quuantity should be field";
+            warning.classList.add('warning');
+            document.body.appendChild(warning)
+    }
+ }
