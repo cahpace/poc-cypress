@@ -25,6 +25,7 @@ add_btn.addEventListener('click', () => {
                 
                 const removeBtn = document.createElement('button');
                 removeBtn.textContent = "X";
+                removeBtn.classList.add('remove_btn')
                 itemDiv.appendChild(removeBtn);
                 removeBtn.addEventListener('click', () => {
                     itemsContainer.removeChild(itemDiv);
