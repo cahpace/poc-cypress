@@ -11,7 +11,7 @@ add_btn.addEventListener('click', () => {
 
             //if (itemName && itemQuantity) {
                 const itemDiv = document.createElement('div');
-                //itemDiv.classList.add('item');
+                itemDiv.classList.add('item');
                 const p1 = document.createElement('p');
                 const p2 = document.createElement('p');
     
