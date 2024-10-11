@@ -7,3 +7,7 @@
 .item p {
     margin: 0.1rem 0.3rem;
 }
+
+.warning {
+    color: red;
+}
