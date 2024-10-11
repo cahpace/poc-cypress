@@ -29,9 +29,14 @@ describe('cenario, pode-se dividir em cenarios com erros e cenarios sem erros', 
   });
   it('should add an item correctly', () => {
     cy.get('#name_item').type('fermento');
-    cy.get('#quantity_item').type('2');
+    cy.get('#quantity_item').type(2);
     cy.get('#add_item').click();
-    cy.get('div', { timeout: 1 }).should('be.visible');  // Aguarda até 10 segundos se necessário
-    //cy.get('.item').should('contain.text', 'fermento');
+    cy.get('.item', { timeout: 1 }).should('be.visible');  // Aguarda até 10 segundos se necessário
+    cy.get('.item').should('contain.text', 'fermento');
+    cy.get('.item').should('contain.text', 2)
+  });
+  it('the button to delete should work', () => {
+    cy.get('.remove_btn').click();
+    cy.get('.item').should('not.exist');
   })
 })
